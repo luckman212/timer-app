@@ -410,7 +410,13 @@ class MVClockView: NSControl {
     self.firstTick = true
     self.stop()
 
-    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+    self.timer = Timer.scheduledTimer(
+      timeInterval: 1,
+      target: self,
+      selector: #selector(tick),
+      userInfo: nil,
+      repeats: true
+    )
     self.timer?.tolerance = 0.03 // improve battery life
   }
 
